@@ -14,6 +14,7 @@ export default function domino<S extends Object>(
   });
 
   const app = new Hono();
+  Deno.serve(app.fetch);
 
   app.get("/bot.json", (c) => {
     const nodes: {
